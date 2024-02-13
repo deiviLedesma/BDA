@@ -34,7 +34,7 @@ FOREIGN KEY (idCliente) REFERENCES CLIENTE(idCliente)
 
 CREATE TABLE OPERACION( 
 idOperacion int primary key auto_increment, 
-tipoOperacion  ENUM('Deposito', 'Retiro', 'Retiro sin cuenta'), 
+tipoOperacion  ENUM('Deposito', 'Retiro', 'Retiro sin cuenta', 'Transferencia'), 
 monto DECIMAL(10,2),
 fechaOperacion DATETIME, 
 idCuenta int, 
