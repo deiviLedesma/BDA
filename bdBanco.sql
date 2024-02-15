@@ -1,5 +1,5 @@
-create database BANCO;
-use BANCO;
+create database banco;
+use banco;
 
 CREATE TABLE CLIENTE( 
 idCliente int primary key auto_increment, 
@@ -7,7 +7,7 @@ nombre varchar(50) not null,
 apellidoPaterno varchar(50) not null, 
 apelldioMaterno varchar(50), 
 idDomicilio int, 
-fechaNacimiento date, 
+fechaNacimiento date not null, 
 FOREIGN KEY (idDomicilio) REFERENCES DOMICILIO(idDomicilio) 
 ); 
 
@@ -15,28 +15,48 @@ FOREIGN KEY (idDomicilio) REFERENCES DOMICILIO(idDomicilio)
 
 CREATE TABLE DOMICILIO( 
 idDomicilio int primary key auto_increment, 
-calle varchar(25), 
-colonia varchar(25), 
-numero varchar(8) 
+calle varchar(25) not null, 
+colonia varchar(25) not null, 
+numero varchar(8) not null 
 ); 
 
  
 
 CREATE TABLE CUENTA( 
-idCuenta int primary key auto_increment,
+idCuenta int primary key auto_increment, 
 fechaApertura date, 
-Saldo DECIMAL(10,2), 
+Saldo DECIMAL(10,2) not null, 
 idCliente int, 
 FOREIGN KEY (idCliente) REFERENCES CLIENTE(idCliente) 
 ); 
 
  
+CREATE TABLE TRANSFERENCIA( 
+IdTransferencia int primary key auto_increment, 
+FechaTransferencia date, 
+Monto DECIMAL(10,2) not null, 
+IdCuentaRecibe int not null, 
+IdCuentaEnvia int not null,
+FOREIGN KEY (idCuentaRecibe) REFERENCES CLIENTE(idCliente), 
+FOREIGN KEY (idCuentaEnvia) REFERENCES CLIENTE(idCliente) 
+); 
 
-CREATE TABLE OPERACION( 
-idOperacion int primary key auto_increment, 
-tipoOperacion  ENUM('Deposito', 'Retiro', 'Retiro sin cuenta', 'Transferencia'), 
-monto DECIMAL(10,2),
-fechaOperacion DATETIME, 
-idCuenta int, 
-FOREIGN KEY (idCuenta) REFERENCES CUENTA(idCuenta)
+CREATE TABLE RETIROSINCUENTA( 
+IdRetiro int primary key auto_increment, 
+FechaExpiracion datetime, 
+Folio varchar(25), 
+Contraseña varchar(25) not null, 
+Saldo DECIMAL(10,2) not null, 
+IdCuenta int, 
+FOREIGN KEY (idCuenta) REFERENCES CLIENTE(idCliente)
+); 
+
+ 
+
+CREATE TABLE RETIRO( 
+IdRetiro int primary key auto_increment, 
+Cantidad decimal(10,2) not null, 
+Fecha date, 
+IdCuenta int, 
+FOREIGN KEY (idCuenta) REFERENCES CLIENTE(idCliente)
 ); 
