@@ -11,6 +11,7 @@ package com.mycompany.bancodominio;
 
 public class Domicilio {
 
+  private int idDomicilio;
   private String calle;
   private int numero;
   private String colonia;
