@@ -58,6 +58,11 @@ public class Retiro {
     public void setIdCuenta(int idCuenta) {
         this.idCuenta = idCuenta;
     }
+
+    @Override
+    public String toString() {
+        return "Retiro{" + "idRetiro=" + idRetiro + ", cantidad=" + cantidad + ", fecha=" + fecha + ", idCuenta=" + idCuenta + '}';
+    }
     
     
 }
