@@ -40,4 +40,9 @@ public class Cuenta {
         this.saldo = saldo;
     }
 
+    @Override
+    public String toString() {
+        return "Cuenta{" + "numeroCuenta=" + numeroCuenta + ", fechaA=" + fechaA + ", saldo=" + saldo + '}';
+    }
+
 }
