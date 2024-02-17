@@ -37,5 +37,10 @@ public class TransferenciaForm {
     public void setMonto(double monto) {
         this.monto = monto;
     }
+
+      @Override
+    public String toString() {
+        return "TransferenciaForm{" + "cuentaOrigen=" + cuentaOrigen + ", cuentaDestino=" + cuentaDestino + ", monto=" + monto + '}';
+    }
     
 }
