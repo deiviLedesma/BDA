@@ -84,5 +84,10 @@ public class RetiroSinCuenta {
         this.idCuenta = idCuenta;
     }
 
+    @Override
+    public String toString() {
+        return "RetiroSinCuenta{" + "idRetiro=" + idRetiro + ", fechaExpiracion=" + fechaExpiracion + ", folio=" + folio + ", contrasenia=" + contrasenia + ", saldo=" + saldo + ", idCuenta=" + idCuenta + '}';
+    }
+
     
 }
