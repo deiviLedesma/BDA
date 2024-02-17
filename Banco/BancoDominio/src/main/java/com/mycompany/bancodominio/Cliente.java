@@ -143,4 +143,9 @@ public class Cliente {
         this.edad = edad;
     }
 
+    @Override
+    public String toString() {
+        return "Cliente{" + "clienteID=" + clienteID + ", nombre=" + nombre + ", apellidoP=" + apellidoP + ", apellidoM=" + apellidoM + ", calle=" + calle + ", numero=" + numero + ", colonia=" + colonia + ", fechaN=" + fechaN + ", edad=" + edad + '}';
+    }
+
 }
