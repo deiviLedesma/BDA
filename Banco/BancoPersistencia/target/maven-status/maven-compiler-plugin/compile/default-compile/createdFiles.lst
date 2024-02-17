@@ -1,0 +1,9 @@
+com\mycompany\bancopersistencia\BancoPersistencia.class
+CONEXION\IConexionBD.class
+CONEXION\ConexionBD.class
+DAO\TransferenciaDAO.class
+CONEXION\PruebaConexion.class
+DAO\IClienteDAO.class
+VALIDACIONES\Validaciones.class
+DAO\ClienteDAO.class
+CONEXION\Conexion.class
