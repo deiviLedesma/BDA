@@ -1,0 +1,9 @@
+ClasesDTO\ClienteDTO.class
+ClasesDTO\TransferenciaDTO.class
+com\mycompany\dominiobanco\DominioBanco.class
+ClasesPOJO\Transferencia.class
+ClasesPOJO\Cuenta.class
+ClasesPOJO\Retiro.class
+ClasesPOJO\Cliente.class
+ClasesDTO\DomicilioDTO.class
+ClasesPOJO\Domicilio.class
